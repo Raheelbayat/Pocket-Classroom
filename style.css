@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(251, 241, 251);
+  font-family: Arial, sans-serif;
+}
+
+/* Background rectangle */
+.rectangle {
+  background-image: url("bg-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80px;
+  color: transparent;
+}
+
+/* Pink header background */
+.bg-pink {
+  background-color: rgba(255, 27, 148, 0.8);
+}
+
+/* Custom pink button style */
+.btn-primary1 {
+  background-color: rgba(255, 27, 148, 0.8);
+  border: 2px solid white;
+  color: white;
+}
+.btn-primary1:hover {
+  background-color: white;
+  color: rgba(255, 27, 148, 0.8);
+  border: 2px solid rgba(255, 27, 148, 0.8);
+}
+
+/* Navbar links */
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .bg-pink h1 {
+    font-size: 1.5rem;
+  }
+}
