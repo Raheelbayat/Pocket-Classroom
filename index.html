@@ -15,7 +15,7 @@
 
 <body>
   <div class="rectangle">
-    <p>Rectangle for background image</p>
+  <p></p>
   </div>
 
   <!-- HEADER -->
@@ -32,35 +32,68 @@
 
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Author</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
+          <li class="nav-item"><a class="nav-link" data-view="learn" href="/">Learn</a></li>
+          <li class="nav-item"><a class="nav-link" data-view="author" href="/author">Author</a></li>
+          <li class="nav-item"><a class="nav-link" data-view="library" href="/library">Library</a></li>
         </ul>
+
+        <section id="libraryView" class="view mt-3"></section>
+        <section id="authorView" class="view mt-3" style="display:none;"></section>
+        <section id="learnView" class="view mt-3" style="display:none;"></section>
       </div>
     </nav>
   </div>
 
-  <!-- CAPSULE SECTION -->
-  <div class="container my-4">
-    <div class="p-4 bg-light rounded-3 shadow-sm mb-3">
-      <div class="row align-items-start">
-        <div class="col-md-8">
-          <h3>Your Capsule</h3>
-          <p>Create, import, export, and manage learning capsules. All data stays in your browser.</p>
-        </div>
-        <div class="col-md-4 text-md-end">
-          <button class="btn btn-primary1 fw-bold me-2">New Capsule</button>
-          <button class="btn btn-primary1 fw-bold">Import JSON</button>
-        </div>
+<!-- Capsules started here: -->
+<div class="container my-4">
+  <div class="p-4 bg-light rounded-3 shadow-sm mb-3">
+    <div class="row align-items-start">
+      <div class="col-6">
+        <h3>Your Capsule</h3>
+        <p>Create, import, export, and manage learning capsules. All data stays in your browser.</p>
       </div>
-    </div>
 
-    <div class="p-4 bg-light rounded-3 shadow-sm">
-      <h3>No capsules yet</h3>
-      <p>Click New Capsule to create one, or Import JSON to load a shared capsule.</p>
+      <div class="col-3 button-row text-md-end">
+        <!-- <input type="text" id="capsuleInput" class="form-control mb-2" placeholder="Enter your text"> -->
+        <button class="btn col-3 w-100 w-md-auto btn-primary1 fw-bold mt-2 mt-md-0 me-2" id="newCapsBtn">New Capsule</button>
+          <div id="boxContainer"></div>
+      </div>
+      <div class="col-3 button-row text-md-end">
+        <button class="btn col-3 w-100 w-md-auto btn-primary1 fw-bold mt-2 mt-md-0 me-2" id="jsonEntering">Import JSON</button>
+      </div>
     </div>
   </div>
 
+  <div class="p-4 bg-light rounded-3 shadow-sm mb-3">
+    <div class="row align-items-start">
+      <div class="col-6">
+        <h3>No capsules yet</h3>
+        <p>Click New Capsule to create one, or Import JSON to load a shared capsule.</p>
+      </div>
+
+      <div class="col-3 button-row text-md-end">
+        <!-- <input type="text" id="capsuleInput" class="form-control mb-2" placeholder="Enter your text"> -->
+        <button class="btn col-3 w-100 w-md-auto btn-transparent fw-bold mt-2 mt-md-0 me-2" id="newCapsBtn2"></button>
+          <div id="boxContainer2"></div>
+      </div>
+      <div class="col-3 button-row text-md-end">
+        <button class="btn col-3 w-100 w-md-auto btn-transparent fw-bold mt-2 mt-md-0 me-2" id="newCapsBtn2"></button>
+      </div>
+    </div>
+      </div>
+        <!-- container for new capsules -->
+      <div id="capsuleContainer" class="container-3-for-newCapsule"></div>
+    </div>  
+  </div>
+</div>
+
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+  <script src="app.js" defer type="module"></script>
+  <script src="router.js"></script>
+
 </body>
 </html>
