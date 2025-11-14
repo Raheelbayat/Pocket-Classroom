@@ -1,198 +1,143 @@
-/* Responsive tweak */
-@media (max-width: 768px) {
-  .bg-pink h1 {
-    font-size: 1.5rem;
-  }
-}
-
 :root {
-  --main-color: rgba(255, 27, 148, 0.8);
-  --capsule-color: #f8f9fa;
+  --main-color: rgba(0, 13, 255, 0.8);
+  --capsule-color: #487a33;
+  --capsule-text-color: #e0e0e0;
+  --accent-color: #ff0000;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
 }
 
-
-/* Body */
 body {
   font-family: Arial, sans-serif;
-  transition: background 0.5s, color 0.5s;
-  background-color: rgb(251, 241, 251);
-  color: black;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
-/* Background rectangle */
-.rectangle {
-  background-image: url("bg-image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80px;
-  color: transparent;
+h1, h2, h3, h4, h5, h6, .section-title {
+  color: var(--accent-color);
 }
 
-.container {
-  text-align: justify;
-}
-/* noCapsulesMsg box: */
-#noCapsulesMsg {
-  max-width: 800px;   /* limit width on large screens */
-  width: 100%;        /* full width on smaller screens */
-  margin: 20px auto;  /* center horizontally */
-  padding: 20px;      /* ensure text doesn’t overflow */
-  box-sizing: border-box; /* include padding in width */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
+.bg-pink { 
+  background: linear-gradient(135deg, #1de997, #1bd2c6);
+  color: #fff;
+}
+.bg-pink h1 { font-size: 2rem; margin: 0; }
 
-/* Pink header background */
-.bg-pink {
-  background-color: var(--main-color);
-}
-
-.button-row {
-  display: flex;
-  flex-wrap: wrap;  /* allow buttons to wrap on small screens */
-  gap: 10px;
-}
-
-.btn-primary1 {
-  background-color: var(--main-color);
-  border: 2px solid white;
-  color: var(--capsule-color);
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.btn-primary1:hover {
-  background-color: white;
-  color: rgba(255, 27, 148, 0.8);
-}
-/* Transparent btn: */
-.btn-transparent {
-  background-color: transparent !important;
-  color: transparent !important;
-}
-/* CSS for other btns: */
-.btn-pink {
-  background-color: rgba(255, 27, 148, 0.8);
-  color: white;
-}
-
-.btn-lightblue {
-  background-color: rgb(29, 26, 235);
-  color: white;
-}
-
-.btn-salmon {
-  background-color: rgb(225, 46, 26);
-  color: white;
-}
-
-.btn-lightgreen {
-  background-color: rgb(37, 116, 37);
-  color: white;
-}
-
-
-/* Navbar links */
-.nav-link {
-  color: var(--capsule-color--) !important;
-  font-weight: 500;
-}
-.nav-link:hover {
-  text-decoration: underline;
-}
-
+.nav-link { color: #fff !important; font-weight: 500; }
+.nav-link:hover { text-decoration: underline; }
 
 .container-3-for-newCapsule {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin: 20px;
-  text-align: justify;
+  margin: 20px 0;
 }
 
-
-.newCapsules_1 {
-  background-color: var(--capsule-color);
-  box-shadow: 2px 2px 2px rgb(174, 175, 175);
-  border-radius: 10px;
+#noCapsulesMsg {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
   padding: 20px;
   text-align: center;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  color: #aaa;
 }
 
 .capsule {
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
+  background-color: var(--capsule-color);
+  color: var(--capsule-text-color);
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 15px;
-}
-.capsule-buttons button {
-  margin-right: 5px;
-}
-
-.toggle_box {
-  width: 50px;
-  height: 25px;
-  border: 2px solid var(--main-color);
-  border-radius: 15px;
-  display: block;
-  cursor: pointer;
-}
-
-/* Custom pink button */
-.btn-primary1 {
-  background-color: var(--main-color);
-  border: 2px solid white;
-  color: var(--capsule-color);
-}
-.btn-primary1:hover {
-  background-color: white;
-  color: rgba(255, 27, 148, 0.8);
-}
-
-/* Navbar links */
-.nav-link {
-  color: var(--capsule-color) !important;
-  font-weight: 500;
-}
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* New capsule */
-#newCapsules .px-3 .py-3 {
-  background-color: white;
-  color: black;
-  width: auto; 
-  /* I can put this widt empty as well if my capsule size is going to be not nice. */
-  border-radius: 10px;
-}
-
-.toggle_box {
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.5);
   position: relative;
-  background-color: #d2d2d2;
-  width: 50px;
-  height: 25px;
-  margin-left: 20px;
-  margin-top: 30px;
-  border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.capsule p { margin: 10px 0; word-wrap: break-word; }
+
+.capsule button {
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: 0.3s;
+  border-radius: 5px;
+  transition: all 0.2s;
 }
 
-.toggle_box::before {
-  content: '';
-  position: absolute;
-  background-color: #fff;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  top: 5px;
-  left: 5px;
-  transition: 0.3s;
+.btn-pink, #exportAllBtn, .btn-primary1, .btn-json { 
+  background: linear-gradient(135deg, #00ffcc, #0066ff);
+  color: #fff; 
 }
 
-/* styles for Btn for learn, edit, delete, and export */
-#learn_btn #edit_btn #export_btn #delete_btn {
-  background-color: var(--main-color);
-  color: var(--capsule-color);
+.btn-pink:hover, #exportAllBtn:hover, .btn-primary1:hover, .btn-json:hover {
+  filter: brightness(1.2);
 }
 
+.btn-primary1 { border: none; padding: 8px 14px; border-radius: 6px; font-weight: 500;}
+.btn-lightblue { background: linear-gradient(135deg, #00ffcc, #0066ff); }
+.btn-lightgreen {background: linear-gradient(135deg, #ff8400, #ffcc00); }
+.btn-salmon {background: linear-gradient(135deg, #ff4444, #e89f9f); }
+
+#capsuleInput { border: 1px solid #555; border-radius: 10px; padding: 10px 15px; margin: 8px 0; background: #222; color: #fff;}
+#capsuleInput:hover, #capsuleInput:focus { box-shadow: 2px 2px 12px var(--accent-color); outline: none; }
+
+#capsuleLevel { width: 150px; height: 45px; padding: 5px 10px; border-radius: 5px; border: 1px solid #555; background: #222; color: var(--accent-color); font-weight: 500; }
+#capsuleLevel:focus { outline: none; box-shadow: 2px 2px 12px var(--accent-color); }
+
+.capsule-level { margin-left: 5px; background: transparent; }
+
+/* Flashcards */
+.btn-flash { background: linear-gradient(135deg, #00ffcc, #0066ff); }
+.btn-flash:hover { background-color: rgb(64, 36, 206);}
+.flashcard-wrapper { perspective: 1000px; width: 360px; max-width: 100%; }
+.flashcard { width: 100%; height: 220px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
+.flashcard.is-flipped { transform: rotateY(180deg); }
+.flashcard-face { position: absolute; inset: 0; backface-visibility: hidden; display:flex; align-items:center; justify-content:center; padding:20px; border-radius:10px; box-shadow: 2px 4px 12px rgba(0,0,0,0.5); }
+.flashcard-front { background: #333; color: #fff; }
+.flashcard-back { background: #222; color: #fff; transform: rotateY(180deg); }
+
+/* Tabs */
+#notes-tab, #flashcards-tab, #quiz-tab {background-color: #222; color: var(--accent-color); border: 1px solid #00ffcc; border-radius: 2px;}
+#notesList .list-group-item, #flashcardCard .flashcard-face, #quizQuestion { color: #e0e0e0; }
+
+/* Library style */
+.mb-0 {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Bootstrap Badges */
+.badge {
+  font-size: 0.9rem;
+  padding: 0.4em 0.7em;
+}
+
+.badge-primary { background-color: #0066ff; color: #fff; }
+.badge-success { background-color: #ffea00; color: #000; }
+.badge-danger { background-color: #ff4444; color: #fff; }
+
+/* Bootstrap Progress Bars */
+.progress { background-color: #333; border-radius: 8px; height: 20px; }
+.progress-bar { background: linear-gradient(135deg, #00ffcc, #0066ff); color: #fff; font-weight: bold; line-height: 20px; }
+
+/* Bootstrap Cards */
+.card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.5);
+}
+
+.card h5, .card h6 { color: var(--accent-color); }
