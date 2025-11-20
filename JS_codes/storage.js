@@ -31,7 +31,6 @@ export function saveCapsule(obj, id = null) {
   const capsule = Object.assign({}, obj, { updatedAt: now });
   localStorage.setItem(capsuleKey(cid), JSON.stringify({ schema: SCHEMA, capsule }));
 
-  // Update index
   const idx = listIndex();
   const existing = idx.find(i => i.id === cid);
   const meta = {
@@ -79,12 +78,10 @@ export function saveProgress(id, progress) {
 
 // JSON Export + Import
 export function exportCapsuleJSON(capsule) {
-  // ✅ Export only the capsule itself, not wrapped
   return JSON.stringify(capsule, null, 2);
 }
 
 export function validateImported(obj) {
-  // ✅ Allow both wrapped and unwrapped
   const capsule = obj?.capsule ? obj.capsule : obj;
   if (!capsule?.meta?.title) return false;
   if (!((capsule.notes && capsule.notes.length) ||
@@ -94,7 +91,6 @@ export function validateImported(obj) {
 }
 
 export function importCapsule(obj) {
-  // ✅ Handle both formats safely
   const capsule = obj?.capsule ? obj.capsule : obj;
   if (!validateImported(capsule)) throw new Error('Invalid capsule schema or missing fields');
 
@@ -128,3 +124,4 @@ export default {
   validateImported,
   importCapsule
 };
+
