@@ -116,8 +116,6 @@ h1, h2, h3, h4, h5, h6, .section-title {
   color: var(--accent-color);
   font-weight: bold;
 }
-
-/* Bootstrap Badges */
 .badge {
   font-size: 0.9rem;
   padding: 0.4em 0.7em;
@@ -127,11 +125,10 @@ h1, h2, h3, h4, h5, h6, .section-title {
 .badge-success { background-color: #ffea00; color: #000; }
 .badge-danger { background-color: #ff4444; color: #fff; }
 
-/* Bootstrap Progress Bars */
 .progress { background-color: #333; border-radius: 8px; height: 20px; }
 .progress-bar { background: linear-gradient(135deg, #00ffcc, #0066ff); color: #fff; font-weight: bold; line-height: 20px; }
 
-/* Bootstrap Cards */
+/* Cards */
 .card {
   background-color: #1e1e1e;
   color: #e0e0e0;
@@ -141,3 +138,4 @@ h1, h2, h3, h4, h5, h6, .section-title {
 }
 
 .card h5, .card h6 { color: var(--accent-color); }
+
